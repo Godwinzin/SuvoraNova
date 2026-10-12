@@ -1,12 +1,31 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import Cart from './pages/Cart';
+import ProductDetail from './pages/ProductDetails';
+import Toast from './components/Toast';
 
 export default function App() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    const savedCart = localStorage.getItem("shopsphere_cart");
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("shopsphere_cart", JSON.stringify(cart));
+  }, [cart]);
+
+  const [toastMessage, setToastMessage] = useState(null);
+
+  // Helper function to show toast temporarily
+  const triggerToast = (msg) => {
+    setToastMessage(msg);
+    setTimeout(() => {
+      setToastMessage(null);
+    }, 3000); // Disappears after 3 seconds
+  };
 
   const addToCart = (product) => {
     setCart(prevCart => {
@@ -18,6 +37,7 @@ export default function App() {
       }
       return [...prevCart, { ...product, quantity: 1 }];
     });
+    triggerToast(`Added ${product.name} to your cart!`);
   };
 
   // Function to increase or decrease quantity (+ / -)
@@ -32,6 +52,8 @@ export default function App() {
       }).filter(Boolean); // Removes any items that turned into null (quantity <= 0)
     });
   };
+
+  
 
   // Function to remove an item entirely
   const removeFromCart = (id) => {
@@ -48,7 +70,6 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop addToCart={addToCart} />} />
-          {/* Pass the new functions down as props to Cart */}
           <Route path="/cart" element={
             <Cart 
               cart={cart} 
@@ -56,7 +77,9 @@ export default function App() {
               removeFromCart={removeFromCart} 
             />
           } />
+          <Route path="/shop/:id" element={<ProductDetail addToCart={addToCart} />} />
         </Routes>
+        <Toast message={toastMessage} show={Boolean(toastMessage)} />
       </div>
     </BrowserRouter>
   );
