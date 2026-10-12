@@ -6,13 +6,22 @@ import searchIcon from '../assets/searchIcon.webp';
 export default function Shop({ addToCart }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState(""); 
+  const [sortBy, setSortBy] = useState("default"); // Added sort state
 
-  // Filter products by category AND search query
+  // 1. Filter products by category AND search query
   const filteredProducts = products.filter(product => {
     const matchesCategory = selectedCategory === "All" || product.category === selectedCategory;
     const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           product.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
+  });
+
+  // 2. Sort the filtered products
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    if (sortBy === "price-low") return a.price - b.price;
+    if (sortBy === "price-high") return b.price - a.price;
+    if (sortBy === "rating") return b.rating - a.rating;
+    return 0; // 'default'
   });
 
   return (
@@ -23,10 +32,10 @@ export default function Shop({ addToCart }) {
           <p className="text-slate-400 text-sm">Browse our full collection of premium products.</p>
         </div>
         
-        {/* Search Bar & Category Filters Container */}
+        {/* Search Bar, Category Filters & Sort Controls Container */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full md:w-auto">
           
-          {/*  Search Input */}
+          {/* Search Input */}
           <div className="relative">
             <span className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-500">
              <img 
@@ -52,6 +61,20 @@ export default function Shop({ addToCart }) {
             )}
           </div>
 
+          {/* Sort Dropdown */}
+          <div className="relative">
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="w-full sm:w-auto bg-slate-900 border border-slate-800 text-slate-300 px-4 py-2.5 rounded-xl text-sm focus:outline-none focus:border-amber-500 transition shadow-inner cursor-pointer"
+            >
+              <option value="default">Sort by: Featured</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+            </select>
+          </div>
+
           {/* Category Filter Buttons */}
           <div className="flex flex-wrap gap-1.5 bg-slate-900 p-1.5 rounded-xl border border-slate-800">
             {["All", "Tech", "Fashion", "Home"].map((cat) => (
@@ -72,13 +95,13 @@ export default function Shop({ addToCart }) {
       </div>
 
       {/* Product Grid or Empty State */}
-      {filteredProducts.length === 0 ? (
+      {sortedProducts.length === 0 ? (
         <div className="text-center py-24 bg-slate-900/50 border border-slate-800/80 rounded-3xl">
           <p className="text-4xl mb-3">🔍</p>
           <h4 className="text-lg font-bold text-slate-200 mb-1">No products found</h4>
           <p className="text-slate-400 text-sm mb-6">Try searching for something else or clearing your filters.</p>
           <button 
-            onClick={() => { setSearchQuery(""); setSelectedCategory("All"); }}
+            onClick={() => { setSearchQuery(""); setSelectedCategory("All"); setSortBy("default"); }}
             className="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-4 py-2 rounded-xl text-sm transition border border-slate-700"
           >
             Reset Filters
@@ -86,7 +109,7 @@ export default function Shop({ addToCart }) {
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProducts.map((product) => (
+          {sortedProducts.map((product) => (
             <div 
               key={product.id}
               className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between hover:border-amber-500/40 transition group shadow-xl"

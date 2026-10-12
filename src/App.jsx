@@ -1,11 +1,19 @@
 import { useState,useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import Cart from './pages/Cart';
 import ProductDetail from './pages/ProductDetails';
 import Toast from './components/Toast';
+import Checkout from './pages/Checkout';
+import OrderHistory from './pages/OrderHistory';
+import ScrollToTop from './components/ScrollToTop';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import FAQ from './pages/FAQ';
+import ShippingReturns from './pages/ShippingReturns';
 
 export default function App() {
   const [cart, setCart] = useState(() => {
@@ -64,6 +72,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop/>
       <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-amber-500 selection:text-slate-950">
         <Navbar totalCartItems={totalCartItems} />
 
@@ -78,8 +87,15 @@ export default function App() {
             />
           } />
           <Route path="/shop/:id" element={<ProductDetail addToCart={addToCart} />} />
+          <Route path="/checkout" element={<Checkout cart={cart} clearCart={() => setCart([])} />} />
+          <Route path="/orders" element={<OrderHistory />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfService />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/shipping" element={<ShippingReturns />} />
         </Routes>
         <Toast message={toastMessage} show={Boolean(toastMessage)} />
+        <Footer/>
       </div>
     </BrowserRouter>
   );

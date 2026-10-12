@@ -55,13 +55,21 @@ export default function Cart({ cart, updateQuantity, removeFromCart }) {
                   </span>
 
                   {/* Remove Button */}
-                  <button 
-                    onClick={() => removeFromCart(item.id)}
-                    className="text-slate-500 hover:text-red-400 transition p-2"
-                    title="Remove item"
-                  >
-                    🗑️
-                  </button>
+                  <button
+                        onClick={() => removeFromCart(item.id)}
+                        className="p-2 bg-red-500/10 hover:bg-red-500/20 text-red-400 rounded-xl border border-red-500/20 transition flex items-center justify-center"
+                        title="Remove item"
+                        aria-label="Remove item"
+                        >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round" 
+                            strokeWidth="2" 
+                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" 
+                            />
+                        </svg>
+                 </button>
                 </div>
 
               </div>
@@ -74,12 +82,12 @@ export default function Cart({ cart, updateQuantity, removeFromCart }) {
               <span className="text-sm text-slate-400">Total Items: {cart.reduce((acc, i) => acc + i.quantity, 0)}</span>
               <div className="text-3xl font-extrabold text-amber-400">${subtotal.toFixed(2)}</div>
             </div>
-            <button 
-              onClick={() => alert("Checkout flow coming soon!")}
-              className="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-amber-500/20 transition"
+            <Link 
+              to="/checkout"
+              className="w-full sm:w-auto text-center bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-amber-500/20 transition"
             >
               Proceed to Checkout
-            </button>
+            </Link>
           </div>
         </div>
       )}
