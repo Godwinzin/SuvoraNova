@@ -86,7 +86,7 @@ export const products = [
     name: "Vertical Laptop Stand",
     price: 39.99,
     category: "Tech",
-    image: "https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?w=500&q=80",
+    image: "https://plus.unsplash.com/premium_photo-1683736986821-e4662912a70d?w=500&q=80",
     rating: 4.5,
     description: "Save desk space with an adjustable aluminum dock for any laptop."
   },
@@ -104,7 +104,7 @@ export const products = [
     name: "Bluetooth Mechanical Keypad",
     price: 65.99,
     category: "Tech",
-    image: "https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1561112078-7d24e04c3407?auto=format&fit=crop&w=800&q=80",
     rating: 4.4,
     description: "Compact wireless number pad matching your favorite mechanical layout."
   },
@@ -113,6 +113,7 @@ export const products = [
     name: "Smart LED Light Bulbs (2-Pack)",
     price: 34.99,
     category: "Tech",
+    rating:4.2,
     image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=500&q=80",
     description: "Voice-controlled color-changing bulbs to set the ultimate mood."
   },
@@ -186,7 +187,7 @@ export const products = [
     name: "Oversized Cashmere Scarf",
     price: 95.00,
     category: "Fashion",
-    image: "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=500&q=80",
+    image: "https://johnhanly.com/wp-content/uploads/2023/09/Cash-Scarf-471-Neal-Byrne-Photography.jpg",
     rating: 4.9,
     description: "Luxurious pure cashmere wrap offering unmatched softness and warmth."
   },
@@ -213,7 +214,7 @@ export const products = [
     name: "Graphic Cotton T-Shirt",
     price: 32.00,
     category: "Fashion",
-    image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80",
     rating: 4.4,
     description: "Pre-shrunk ring-spun cotton tee with a comfortable modern fit."
   },
@@ -222,7 +223,7 @@ export const products = [
     name: "Waterproof Windbreaker Jacket",
     price: 110.00,
     category: "Fashion",
-    image: "https://images.unsplash.com/photo-1544441893-675973e31985?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80",
     rating: 4.6,
     description: "Packable weather-resistant shell designed for sudden downpours."
   },
@@ -242,7 +243,7 @@ export const products = [
     name: "Ceramic Pour-Over Coffee Mug",
     price: 24.99,
     category: "Home",
-    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=800&q=80",
     rating: 4.9,
     description: "Hand-glazed ceramic mug engineered to keep your morning brew warm."
   },
@@ -287,7 +288,7 @@ export const products = [
     name: "Glass French Press Coffee Maker",
     price: 39.99,
     category: "Home",
-    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1708127368781-cd5f069a90a5?w=500&q=80",
     rating: 4.8,
     description: "Heat-resistant borosilicate glass carafe for rich, full-bodied French press coffee."
   },
@@ -323,7 +324,7 @@ export const products = [
     name: "Pre-Seasoned Cast Iron Skillet",
     price: 42.00,
     category: "Home",
-    image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500&q=80",
+    image: "https://plus.unsplash.com/premium_photo-1716488286931-79cef654e08c?w=500&q=80",
     rating: 4.9,
     description: "Heavy-duty skillet built for perfect searing, baking, and frying."
   },
@@ -332,7 +333,7 @@ export const products = [
     name: "Eco-Friendly Bamboo Cutlery Set",
     price: 18.99,
     category: "Home",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500&q=80",
+    image: "https://plus.unsplash.com/premium_photo-1664007654191-75992ed6627b?w=500&q=80",
     rating: 4.3,
     description: "Portable reusable utensil set with canvas pouch for sustainable dining."
   },
@@ -341,7 +342,7 @@ export const products = [
     name: "Nordic Throw Blanket",
     price: 65.00,
     category: "Home",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1605189549971-305d135c8269?w=500&q=80",
     rating: 4.8,
     description: "Cozy knit woolen blanket designed for ultimate couch comfort."
   },
@@ -350,7 +351,7 @@ export const products = [
     name: "Natural Marble Coaster Set",
     price: 24.00,
     category: "Home",
-    image: "https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?w=500&q=80",
+    image: "https://plus.unsplash.com/premium_photo-1681412205355-93299347bc2e?w=200&q=80",
     rating: 4.5,
     description: "Hand-crafted polished stone coasters featuring unique natural veining."
   },
@@ -386,7 +387,7 @@ export const products = [
     name: "Magnetic Dashboard Phone Mount",
     price: 24.99,
     category: "Tech",
-    image: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1619741982598-7cb8a7959476?w=500&q=80",
     rating: 4.4,
     description: "Secure dashboard mount with ultra-strong rare-earth magnets."
   },
@@ -395,7 +396,7 @@ export const products = [
     name: "Full-Grain Leather Belt",
     price: 39.99,
     category: "Fashion",
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1664285612706-b32633c95820?w=500&q=80",
     rating: 4.5,
     description: "Classic leather belt featuring a timeless brushed metal buckle."
   },
@@ -404,7 +405,7 @@ export const products = [
     name: "Tailored Wool Blend Overcoat",
     price: 150.00,
     category: "Fashion",
-    image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=500&q=80",
+    image: "https://plus.unsplash.com/premium_photo-1674719144570-0728faf14f96?w=500&q=80",
     rating: 4.8,
     description: "Sophisticated winter coat offering structured warmth and effortless style."
   },
@@ -413,7 +414,7 @@ export const products = [
     name: "Electric Temperature Control Kettle",
     price: 79.99,
     category: "Home",
-    image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1587276483424-b9c46b3eef2e?w=500&q=80",
     rating: 4.9,
     description: "Rapid-boil stainless steel kettle with precise digital temperature presets."
   },
@@ -431,7 +432,7 @@ export const products = [
     name: "Plush Velvet Accent Pillow",
     price: 28.00,
     category: "Home",
-    image: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1691256676366-370303d55b61?w=500&q=80",
     rating: 4.5,
     description: "Soft velvet cushion cover adding a touch of luxury to any living space."
   },
@@ -449,7 +450,7 @@ export const products = [
     name: "Aromatherapy Reed Diffuser",
     price: 26.50,
     category: "Home",
-    image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1750429431308-96eb0e8b6f6f?w=500&q=80",
     rating: 4.4,
     description: "Subtle continuous fragrance infusing your home with calming botanical notes."
   }
