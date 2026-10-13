@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { products } from '../data/product';
+import StarRating from '../components/StarRating';
 import searchIcon from '../assets/searchIcon.webp';
 
 export default function Shop({ addToCart }) {
@@ -26,7 +27,7 @@ export default function Shop({ addToCart }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Custom smooth scroll that you can interrupt at any time
+  // Custom smooth scroll 
   const scrollToTop = () => {
     // Cancel any previous animation if it's running
     if (animRef.current) {
@@ -175,12 +176,16 @@ export default function Shop({ addToCart }) {
                     />
                   </div>
                   
-                  <div className="flex justify-between items-start mb-2">
+                  {/* Card Header: Category & Reusable Star Rating */}
+                  <div className="flex justify-between items-center mb-2">
                     <span className="text-xs uppercase font-bold tracking-wider text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md border border-amber-500/20">
                       {product.category}
                     </span>
-                    <span className="text-sm font-semibold text-slate-300">⭐ {product.rating}</span>
+                    
+                    {/* Reusable Star Rating Component (Compact size for grid cards) */}
+                    <StarRating rating={product.rating} size="3.5" />
                   </div>
+
                   <h4 className="text-lg font-bold text-slate-100 mb-2 group-hover:text-amber-400 transition">{product.name}</h4>
                   <p className="text-slate-400 text-sm mb-4 line-clamp-2">{product.description}</p>
                 </Link>

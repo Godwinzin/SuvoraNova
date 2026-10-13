@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { products } from '../data/product';
+import StarRating from '../components/StarRating';
 
 export default function ProductDetail({ addToCart }) {
   const { id } = useParams();
@@ -28,18 +29,29 @@ export default function ProductDetail({ addToCart }) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-slate-900 border border-slate-800 p-8 rounded-3xl shadow-2xl">
         {/* Product Image */}
         <div className="aspect-square bg-slate-950 rounded-2xl overflow-hidden border border-slate-800">
-          <img src={product.image} 
-          alt={product.name}
-          loading='lazy' 
-          className="w-full h-full object-cover" />
+          <img 
+            src={product.image} 
+            alt={product.name}
+            loading='lazy' 
+            className="w-full h-full object-cover" 
+          />
         </div>
 
         {/* Product Info */}
         <div className="space-y-6">
-          <span className="text-xs uppercase tracking-widest bg-slate-800 text-amber-400 px-3 py-1 rounded-full font-semibold">
-            {product.category}
-          </span>
-          <h1 className="text-4xl font-extrabold text-slate-100 tracking-tight">{product.name}</h1>
+          {/* Category Badge */}
+          <div>
+            <span className="text-xs uppercase tracking-widest bg-slate-800 text-amber-400 px-3 py-1 rounded-full font-semibold">
+              {product.category}
+            </span>
+          </div>
+
+          {/* Title & Star Rating Grouped Together */}
+          <div className="space-y-3">
+            <h1 className="text-4xl font-extrabold text-slate-100 tracking-tight">{product.name}</h1>
+            <StarRating rating={product.rating} size="5" />
+          </div>
+
           <p className="text-3xl font-black text-amber-400">${product.price.toFixed(2)}</p>
           <p className="text-slate-300 leading-relaxed">{product.description}</p>
 
