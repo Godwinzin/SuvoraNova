@@ -173,26 +173,65 @@ export default function Checkout({ cart, clearCart }) {
               type="text" 
               name="cardNumber" 
               required
-              maxLength="19"
+              inputMode="numeric"
+              maxLength="19" 
+              placeholder="1234 5678 9012 3456"
               value={formData.cardNumber} 
-              onChange={handleChange}
+              onChange={(e) => {
+                // Strip non-digits and cap at 16 digits max
+                let value = e.target.value.replace(/\D/g, '').slice(0, 16);
+                
+                // Check if it starts with 34 or 37 (American Express identifiers)
+                if (value.startsWith('34') || value.startsWith('37')) {
+                  // Limit Amex to 15 digits and apply 4-6-5 spacing
+                  value = value.slice(0, 15);
+                  value = value.replace(/^(\d{4})(\d{0,6})(\d{0,5})/, (match, p1, p2, p3) => {
+                    let res = p1;
+                    if (p2) res += ' ' + p2;
+                    if (p3) res += ' ' + p3;
+                    return res;
+                  });
+                } else {
+                  // Standard 4-4-4-4 spacing for Visa, Mastercard, Discover, etc.
+                  value = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+                }
+
+                handleChange({ target: { name: 'cardNumber', value } });
+              }}
               className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-amber-500"
-              placeholder="4242 4242 4242 4242"
             />
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-400 uppercase mb-1">Expiration Date</label>
+              <label className="block text-xs font-semibold text-slate-400 uppercase mb-1">
+                Expiration Date
+              </label>
               <input 
                 type="text" 
                 name="expDate" 
                 required
+                inputMode="numeric"
                 maxLength="5"
-                value={formData.expDate} 
-                onChange={handleChange}
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-amber-500"
                 placeholder="MM/YY"
+                value={formData.expDate} 
+                onChange={(e) => {
+                  let value = e.target.value.replace(/\D/g, ''); // Keep numbers only
+                  
+                  // Prevent entering invalid months starting with 2-9 without leading 0
+                  if (value.length === 1 && parseInt(value) > 1) {
+                    value = `0${value}`;
+                  }
+
+                  // Auto-insert slash after MM
+                  if (value.length > 2) {
+                    value = `${value.slice(0, 2)}/${value.slice(2, 4)}`;
+                  }
+
+                  // Update state
+                  handleChange({ target: { name: 'expDate', value } });
+                }}
+                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-amber-500"
               />
             </div>
             <div>
@@ -201,9 +240,14 @@ export default function Checkout({ cart, clearCart }) {
                 type="password" 
                 name="cvv" 
                 required
+                inputMode="numeric"
                 maxLength="4"
                 value={formData.cvv} 
-                onChange={handleChange}
+                onChange={(e) => {
+                  // Strip out any non-digit characters (symbols, letters, spaces) and cap at 4 digits
+                  const value = e.target.value.replace(/\D/g, '').slice(0, 4);
+                  handleChange({ target: { name: 'cvv', value } });
+                }}
                 className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-amber-500"
                 placeholder="123"
               />
