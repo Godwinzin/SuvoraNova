@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
         <section className="space-y-3">
           <h2 className="text-lg font-semibold text-white">1. Overview & Commitment</h2>
           <p className="text-slate-400">
-            ShopSphere ("we," "our," or "us") respects your privacy and is committed to protecting your personal data. This Privacy Policy outlines how we collect, store, process, and safeguard your information when you visit our website, purchase products, or interact with our customer support channels.
+            SuvoraNova ("we," "our," or "us") respects your privacy and is committed to protecting your personal data. This Privacy Policy outlines how we collect, store, process, and safeguard your information when you visit our website, purchase products, or interact with our customer support channels.
           </p>
         </section>
 
@@ -65,7 +65,7 @@ export default function PrivacyPolicy() {
         <section className="space-y-3">
           <h2 className="text-lg font-semibold text-white">6. Your Data Rights</h2>
           <p className="text-slate-400">
-            Depending on your jurisdiction, you hold rights regarding your personal information, including the right to access, correct, or request deletion of stored account data. Contact our Privacy Desk at <a href="mailto:privacy@shopsphere.com" className="text-purple-400 hover:underline">privacy@shopsphere.com</a> for data requests.
+            Depending on your jurisdiction, you hold rights regarding your personal information, including the right to access, correct, or request deletion of stored account data. Contact our Privacy Desk at <a href="mailto:privacy@suvoranova.com" className="text-purple-400 hover:underline">privacy@suvoranova.com</a> for data requests.
           </p>
         </section>
       </div>

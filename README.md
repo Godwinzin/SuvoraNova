@@ -1,6 +1,6 @@
-# ShopSphere
+# SuvoraNova
 
-ShopSphere is a high-performance, fully-featured e-commerce single-page application (SPA) built with **React**, **React Router**, **Tailwind CSS**, and **Vite**. Designed with a sleek, dark-slate and amber UI, it delivers a seamless, end-to-end online shopping experience without requiring a backend database by leveraging `localStorage` for complete data persistence.
+SuvoraNova is a high-performance, fully-featured e-commerce single-page application (SPA) built with **React**, **React Router**, **Tailwind CSS**, and **Vite**. Designed with a sleek, dark-slate and amber UI, it delivers a seamless, end-to-end online shopping experience without requiring a backend database by leveraging `localStorage` for complete data persistence.
 
 ---
 
@@ -26,7 +26,7 @@ ShopSphere is a high-performance, fully-featured e-commerce single-page applicat
 
 <!-- ## 🚀 Getting Started Locally
 
-Follow these steps to get ShopSphere running on your local machine:
+Follow these steps to get SuvoraNova running on your local machine:
 
 ### Prerequisites
 Make sure you have [Node.js](https://nodejs.org/) installed on your computer.
@@ -35,5 +35,5 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your computer.
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/your-username/shopsphere.git](https://github.com/your-username/shopsphere.git)
-   cd shopsphere -->
+   git clone [https://github.com/your-username/suvoranova.git](https://github.com/your-username/suvoranova.git)
+   cd suvoranova -->

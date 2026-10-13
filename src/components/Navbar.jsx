@@ -19,7 +19,7 @@ export default function Navbar({ totalCartItems }) {
             className="h-7 w-auto sm:h-8 object-contain group-hover:scale-105 transition"
           />
           <span className="text-lg sm:text-xl font-bold tracking-tight text-white group-hover:text-purple-400 transition">
-            Shop<span className="text-purple-500">Sphere</span>
+            Suvora<span className="text-purple-500">Nova</span>
           </span>
         </Link>
 

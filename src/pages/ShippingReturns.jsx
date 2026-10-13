@@ -69,7 +69,8 @@ export default function ShippingReturns() {
             <span className="text-purple-400">02.</span> Order Tracking
           </h2>
           <p className="text-slate-400">
-            Once your order dispatches, you will receive an update with a tracking reference. You can view real-time status changes anytime via our <Link to="/orders" className="text-purple-400 hover:underline">Track Orders</Link> portal.
+            Once your order dispatches, you will receive an update with a tracking reference. You can view real-time status changes anytime
+             via our <Link to="/orders" className="text-purple-400 hover:underline">Track Orders</Link> portal.
           </p>
         </section>
 

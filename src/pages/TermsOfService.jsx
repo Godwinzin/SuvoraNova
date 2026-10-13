@@ -19,7 +19,7 @@ export default function TermsOfService() {
         <section className="space-y-3">
           <h2 className="text-lg font-semibold text-white">1. Agreement to Terms</h2>
           <p className="text-slate-400">
-            By accessing or placing an order through ShopSphere ("Store"), you agree to be bound by these Terms of Service and all applicable local and international laws. If you do not accept these terms, please do not use this platform.
+            By accessing or placing an order through SuvoraNova ("Store"), you agree to be bound by these Terms of Service and all applicable local and international laws. If you do not accept these terms, please do not use this platform.
           </p>
         </section>
 
@@ -49,21 +49,21 @@ export default function TermsOfService() {
         <section className="space-y-3">
           <h2 className="text-lg font-semibold text-white">5. Intellectual Property Rights</h2>
           <p className="text-slate-400">
-            All original media, graphics, site layouts, brand trademarks, and design code on ShopSphere are the exclusive property of ShopSphere and protected under global copyright laws.
+            All original media, graphics, site layouts, brand trademarks, and design code on SuvoraNova are the exclusive property of SuvoraNova and protected under global copyright laws.
           </p>
         </section>
 
         <section className="space-y-3">
           <h2 className="text-lg font-semibold text-white">6. Limitation of Liability</h2>
           <p className="text-slate-400">
-            ShopSphere shall not be liable for indirect, incidental, or consequential damages resulting from the use of, or inability to use, our services or products beyond the purchase price of the item in question.
+            SuvoraNova shall not be liable for indirect, incidental, or consequential damages resulting from the use of, or inability to use, our services or products beyond the purchase price of the item in question.
           </p>
         </section>
 
         <section className="space-y-3">
           <h2 className="text-lg font-semibold text-white">7. Governing Law & Contact</h2>
           <p className="text-slate-400">
-            These terms are governed by commercial retail laws. For inquiries concerning legal terms, email us at <a href="mailto:legal@shopsphere.com" className="text-purple-400 hover:underline">legal@shopsphere.com</a>.
+            These terms are governed by commercial retail laws. For inquiries concerning legal terms, email us at <a href="mailto:legal@suvoranova.com" className="text-purple-400 hover:underline">legal@suvoranova.com</a>.
           </p>
         </section>
       </div>

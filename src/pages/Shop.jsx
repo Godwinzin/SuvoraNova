@@ -182,7 +182,6 @@ export default function Shop({ addToCart }) {
                       {product.category}
                     </span>
                     
-                    {/* Reusable Star Rating Component (Compact size for grid cards) */}
                     <StarRating rating={product.rating} size="3.5" />
                   </div>
 

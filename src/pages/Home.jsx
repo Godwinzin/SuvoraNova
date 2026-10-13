@@ -7,7 +7,7 @@ export default function Home() {
         
         {/* Simple Store Tag */}
         <span className="text-purple-400 font-medium text-sm tracking-wide uppercase">
-          Welcome to ShopSphere
+          Welcome to Suvoranova
         </span>
 
         {/* Headline */}

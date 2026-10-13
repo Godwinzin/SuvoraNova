@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Brand Info */}
         <div className="space-y-3">
           <span className="text-lg font-bold text-white tracking-tight">
-            Shop<span className="text-purple-500">Sphere</span>
+            Suvora<span className="text-purple-500">Nova</span>
           </span>
           <p className="text-xs text-slate-500 leading-relaxed max-w-xs">
             Simple, reliable, and straightforward modern storefront.
@@ -35,7 +35,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="mailto:support@shopsphere.com" className="hover:text-white transition">
+              <a href="mailto:support@suvoranova.com" className="hover:text-white transition">
                 Email Support
               </a>
             </li>
@@ -131,7 +131,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto border-t border-slate-800/80 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-        <p>© {new Date().getFullYear()} ShopSphere. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} SuvoraNova. All rights reserved.</p>
         <div className="flex gap-4">
           <Link to="/privacy" className="hover:text-slate-300 transition">Privacy Policy</Link>
   <Link to="/terms" className="hover:text-slate-300 transition">Terms of Service</Link>
