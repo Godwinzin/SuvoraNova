@@ -14,7 +14,7 @@ SuvoraNova is a high-performance, fully-featured e-commerce single-page applicat
 
 ---
 
-## 🛠️Tech Stack
+## Tech Stack
 
 - **Framework:** React (Functional Components, Hooks like `useState`, `useEffect`)
 - **Routing:** React Router DOM (`v7`)
